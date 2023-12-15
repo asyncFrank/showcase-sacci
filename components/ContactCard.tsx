@@ -44,7 +44,9 @@ const ContactCard = ({ contact }: ContactCardProps) => {
       </div>
 
       <p className="flex mt-4 text-[18px] leading-[20px] break-all  font-extrabold">
-        {profession?.length > 12 ? profession.slice(0, 12) + "..." : profession}
+        {profession?.length > 12
+          ? profession.slice(0, 12) + "..."
+          : profession === "undefined" && "----"}
       </p>
       <p className="flex mt-2 text-[18px] leading-[20px] break-all  font-extrabold">
         {city} {state !== "--" ? "--" + state : ""}
