@@ -31,3 +31,5 @@ D.M.D.P.S.
 ###########################
 [] ** VERIFICAR POR QUE sem enviar nenhum parametro nao esta vindo todos [pode estar em cultivation, etc]
 [] - No final quando subir no Github para fins de portifólio, alterar os nomes das classes/@apply no globals.css
+
+
