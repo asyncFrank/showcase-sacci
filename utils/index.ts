@@ -1,7 +1,8 @@
 import { FilterProps } from "@types";
 import axios from "axios";
 
-const urlBase = "http://localhost:9002/api";
+// const urlBase = "http://localhost:9002/api";
+const urlBase = "https://sacci-agk.onrender.com/api/";
 //Este atualmente
 export const fetchContacts = async (filters: FilterProps) => {
   const { limit, page, sort, search,searchSpecialties, searchStateBr, cultivations } = filters;
