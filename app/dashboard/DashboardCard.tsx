@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import CustomGrid from "../grid/CustomGrid";
 
-
 const DashboardCard = async () => {
   const router = useRouter();
 
@@ -74,7 +73,6 @@ const DashboardCard = async () => {
   ]);
   const contacts = await fetchContactsStatics("/?&search=AGRO");
 
-
   return (
     <div className="max-w-7xl w-full m-auto">
       <h1 className="text-3xl leading-10 text-center mb-5">Dashboard</h1>
@@ -83,7 +81,7 @@ const DashboardCard = async () => {
           <div
             className="rounded-2xl bg-light-white-100 transition-[.2s]  border-[2px]
            border-solid border-transparent hover:border-blue-700 cursor-pointer w-full p-4"
-           key={i}
+            key={i}
           >
             <h3 className="font-bold mb-4">{card.title}</h3>
             <p>{card.text}</p>
@@ -96,18 +94,28 @@ const DashboardCard = async () => {
               handleClick={() => {
                 router.push(`${card.urlParam}`);
               }}
-             
             />
-           
-          
-            
           </div>
         ))}
       </div>
       <div className="flex border-t w-full mt-3">
-        <div>
-          <h3>Culturas</h3>
-          <p>hehejlfjasjdl a</p>
+        <h3 className="font-extrabold">Culturas</h3>
+
+        <div className=" flex-row items-center rounded-full bg-blue-500 w-[380px] h-[380px] text-white">
+          <h6 className="ml-24 pl-8 pt-4">Algodão</h6>
+          <h6 className="ml-24 pl-8">Batata</h6>
+          <h6 className="ml-24 pl-8">Café</h6>
+          <h6 className="ml-24 pl-8">Cana</h6>
+          <h6 className="ml-24 pl-8">Feijão</h6>
+          <h6 className="ml-24 pl-8">Fumo</h6>
+          <h6 className="ml-24 pl-8">Hortifruti</h6>
+          <h6 className="ml-24 pl-8">Mandioca</h6>
+          <h6 className="ml-24 pl-8">Milho</h6>
+          <h6 className="ml-24 pl-8">Soja</h6>
+          <h6 className="ml-24 pl-8">Tomate</h6>
+          <h6 className="ml-24 pl-8">Trigo</h6>
+          <h6 className="ml-24 pl-8">Outros</h6>
+          <h6 className="ml-24 pl-8">NI (Não Informado)</h6>
         </div>
       </div>
     </div>
