@@ -136,6 +136,12 @@ const ContactDetail = ({
                         </p>
                       </div>
                       <div className="flex justify-items-end gap-5 w-full text-right">
+                        <h4 className="text-gray capitalize">{"Site:"}</h4>
+                        <p className="text-black-100 font-semibold">
+                          {contact.site}
+                        </p>
+                      </div>
+                      <div className="flex justify-items-end gap-5 w-full text-right">
                         <h4 className="text-gray capitalize">{"cultura:"}</h4>
                         <p className="text-black-100 font-semibold">
                           {contact.planting_culture}
