@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+https://youtu.be/pUNSHPyVryU?t=8773 -> ate aqui deployado ADK-NEWS
 
-## Getting Started
+##################################
+[] - corrigir quando vai para a ultima -> pagination
+[] - CORRIGIR PAGINATION - QDO VAI PARA A ÚLTIMA
+[] - corrigiir os undefineds
+[] - DAR UMA CONFERIDA MELHOR SEARCH - ZERAR OS INPUTS
+[] - Colocar restantes dos dados no Modal
+[] - FAZER UM MINI DASHBOARD DE RESUMO COM DATA, O NRO TOTAL POR CULTURAS E PELAS PRINCIPAIS PROFISSÃO ( GEÓLOGO,JORNALISTA)
+[] - Colocar TOTAL na página principal
+[] - Colocar spin na espera
+[x] - tirar 'Explore aqui...'
+[x] - diminuir tamanho botão
+[x] - Modal de Contact, se tiver contato interno, colocar cargo/profissao
+[x] - Mudar no controller de busca da api contacts ALL, POR TODAS...
+[X] - diminuir o input profissao -> mesmo tamanho estado
+[] - inserir icone whatsapp (Deixar em standBy)
+[x] - ** FAZER UPDATEPARAMS TAMBEM PARA O CONTROLE DE PAGINACAO
 
-First, run the development server:
+###########################
+DB MYSQL
+###########################
+[] - VERIFICAR DUPLICADOS NA tablea contacts_repo
+[] - backup DB MYSQL
+###########################
+DB MONGO
+###########################
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+###########################
+D.M.D.P.S.
+###########################
+[] ** VERIFICAR POR QUE sem enviar nenhum parametro nao esta vindo todos [pode estar em cultivation, etc]
+[] - No final quando subir no Github para fins de portifólio, alterar os nomes das classes/@apply no globals.css

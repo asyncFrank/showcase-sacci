@@ -70,8 +70,7 @@
 }
 
 .home__filters {
-  /* @apply mt-12 w-full flex-between items-center flex-wrap gap-5; */
-  @apply mt-1 w-full flex-between items-center flex-wrap gap-5;
+  @apply mt-12 w-full flex-between items-center flex-wrap gap-5;
 }
 
 .home__filter-container {
@@ -81,17 +80,13 @@
 .home__cars-wrapper {
   @apply grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-14;
 }
-.home__contacts-wrapper {
-  /* @apply grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-14; */
-  @apply grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-8;
-}
 
 .home__error-container {
   @apply mt-16 flex justify-center items-center flex-col gap-2;
 }
 /* END: Home styles */
 
-/* START: Car Card styles */
+/* START: Contact Card styles */
 .car-card {
   @apply flex flex-col p-6 justify-center items-start text-black-100 bg-primary-blue-100 hover:bg-white hover:shadow-md rounded-3xl;
 }
@@ -139,13 +134,11 @@
 }
 
 .car-card__btn-container {
-  /* @apply hidden group-hover:flex absolute bottom-0 w-full z-10; */
-  /* @apply hidden group-hover:flex absolute -inset-6 w-full z-10; */
   @apply hidden group-hover:flex absolute w-full z-10;
 }
-/* END: Car Card styles */
+/* END: Contact Card styles */
 
-/* START: Car Details styles */
+/* START: Contact Details styles */
 .car-details__dialog-panel {
   @apply relative w-full max-w-lg max-h-[90vh] overflow-y-auto transform rounded-2xl bg-white p-6 text-left shadow-xl transition-all flex flex-col gap-5;
 }
@@ -209,36 +202,25 @@
 }
 
 .searchbar__input {
-  @apply w-full h-[42px] pl-12 p-4 bg-light-white rounded-r-full max-sm:rounded-full outline-none cursor-pointer text-sm;
+  @apply w-full h-[48px] pl-12 p-4 bg-light-white rounded-r-full max-sm:rounded-full outline-none cursor-pointer text-sm;
 }
 /* END: searchbar styles */
 
-/* START: search manufacturer styles */
-.search-manufacturer {
+/* START: search profession styles */
+.search-profession {
   @apply flex-1 max-sm:w-full flex justify-start items-center;
 }
 .search-state {
   @apply flex-1 max-sm:w-full flex justify-start items-center;
 }
-.search-profession {
-  @apply flex-1 max-sm:w-full flex justify-start items-center;
-}
-
-
 .search-manufacturer__input {
   @apply w-full h-[48px] pl-12 p-4 rounded-l-full max-sm:rounded-full bg-light-white outline-none cursor-pointer text-sm;
-}
-.search-state__input {
-  @apply w-full h-[42px] pl-12 p-4 rounded-l-full max-sm:rounded-full bg-light-white outline-none cursor-pointer text-xs;
 }
 
 .search-manufacturer__options {
   @apply absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm;
 }
 
-.search-manufacturer__option {
-  @apply cursor-default select-none py-2 pl-10 pr-4;
-}
 .search-state__option {
   @apply cursor-default select-none py-2 pl-10 pr-4;
 }
