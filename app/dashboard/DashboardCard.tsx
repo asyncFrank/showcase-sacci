@@ -71,6 +71,99 @@ const DashboardCard = async () => {
       value: 90,
     },
   ]);
+  const [cardCultivations] = useState([
+    {
+      title: "ALGODÃO",
+      text: `Total até ${formateDate(new Date())}`,
+      urlParam: `/&cultivations=ALGODÃO`,
+      value: 97,
+    },
+    {
+      title: "ARROZ",
+      text: `Total até ${formateDate(new Date())}`,
+      urlParam: `/&cultivations=ARROZ`,
+      value: 135,
+    },
+    {
+      title: "BATATA",
+      text: `Total até ${formateDate(new Date())}`,
+      urlParam: `/&cultivations=BATATA`,
+      value: 12,
+    },
+    {
+      title: "CAFÉ",
+      text: `Total até ${formateDate(new Date())}`,
+      urlParam: `/&cultivations=CAFÉ`,
+      value: 98,
+    },
+    {
+      title: "CANA",
+      text: `Total até ${formateDate(new Date())}`,
+      urlParam: `/&cultivations=CANA`,
+      value: 92,
+    },
+    {
+      title: "FEIJÃO",
+      text: `Total até ${formateDate(new Date())}`,
+      urlParam: `/&cultivations=FEIJÃO`,
+      value: 85,
+    },
+    {
+      title: "FUMO",
+      text: `Total até ${formateDate(new Date())}`,
+      urlParam: `/&cultivations=FUMO`,
+      value: 2,
+    },
+    {
+      title: "HORTIFRUTI",
+      text: `Total até ${formateDate(new Date())}`,
+      urlParam: `/&cultivations=HORTIFRUTI`,
+      value: 175,
+    },
+    {
+      title: "MANDIOCA",
+      text: `Total até ${formateDate(new Date())}`,
+      urlParam: `/&cultivations=MANDIOCA`,
+      value: 18,
+    },
+    {
+      title: "MILHO",
+      text: `Total até ${formateDate(new Date())}`,
+      urlParam: `/&cultivations=MILHO`,
+      value: 143,
+    },
+
+    {
+      title: "SOJA",
+      text: `Total até ${formateDate(new Date())}`,
+      urlParam: `/&cultivations=SOJA`,
+      value: 341,
+    },
+    {
+      title: "TOMATE",
+      text: `Total até ${formateDate(new Date())}`,
+      urlParam: `/&cultivations=TOMATE`,
+      value: 3757,
+    },
+    {
+      title: "TRIGO",
+      text: `Total até ${formateDate(new Date())}`,
+      urlParam: `/&cultivations=TRIGO`,
+      value: 266,
+    },
+    {
+      title: "OUTROS",
+      text: `Total até ${formateDate(new Date())}`,
+      urlParam: `/&cultivations=OUTROS`,
+      value: 2,
+    },
+    {
+      title: "NI",
+      text: `Total até ${formateDate(new Date())}`,
+      urlParam: `/&cultivations=NI`,
+      value: 4295,
+    },
+  ]);
   const contacts = await fetchContactsStatics("/?&search=AGRO");
 
   return (
@@ -100,23 +193,13 @@ const DashboardCard = async () => {
       </div>
       <div className="flex border-t w-full mt-3">
         <h3 className="font-extrabold">Culturas</h3>
-
-        <div className=" flex-row items-center rounded-full bg-blue-500 w-[380px] h-[380px] text-white">
-          <h6 className="ml-24 pl-8 pt-4">Algodão</h6>
-          <h6 className="ml-24 pl-8">Batata</h6>
-          <h6 className="ml-24 pl-8">Café</h6>
-          <h6 className="ml-24 pl-8">Cana</h6>
-          <h6 className="ml-24 pl-8">Feijão</h6>
-          <h6 className="ml-24 pl-8">Fumo</h6>
-          <h6 className="ml-24 pl-8">Hortifruti</h6>
-          <h6 className="ml-24 pl-8">Mandioca</h6>
-          <h6 className="ml-24 pl-8">Milho</h6>
-          <h6 className="ml-24 pl-8">Soja</h6>
-          <h6 className="ml-24 pl-8">Tomate</h6>
-          <h6 className="ml-24 pl-8">Trigo</h6>
-          <h6 className="ml-24 pl-8">Outros</h6>
-          <h6 className="ml-24 pl-8">NI (Não Informado)</h6>
-        </div>
+        {cardCultivations.map((cultura) => (
+          <div className=" flex-row items-center rounded-full bg-blue-500 w-[80px] h-[80px] text-white">
+            <h6 className="mx-auto pl-4 pt-4 text-xs" key={cultura.title}>
+              {cultura.title} <br/> {cultura.value}
+            </h6>
+          </div>
+        ))}
       </div>
     </div>
   );
