@@ -1,8 +1,8 @@
-import { CustomFilter, SearchBar } from "@/components";
-import { fetchContacts, updateSearchParams } from "@/utils";
+import { SearchBar } from "@/components";
+import { fetchContacts } from "@/utils";
 import ContactCard from "@components/ContactCard";
-import { cultivations } from "@constants";
-import { Contact, FilterProps, HomeProps } from "@types";
+// import { cultivations } from "@constants";
+import { Contact, HomeProps } from "@types";
 import Link from "next/link";
 
 type ContactProps = {
@@ -37,12 +37,16 @@ const LocalPagination = ({
   limit,
   searchStateBr = "",
   search = "",
+  searchSpecialties = "",
+  searchCultivations = "TODAS",
 }: {
   currentPage: number;
   lastPage: number;
   limit: number;
   searchStateBr?: string;
   search?: string;
+  searchSpecialties?: string;
+  searchCultivations?: string;
 }) => {
   const pages = generatePagination(currentPage, lastPage);
   return (
@@ -51,7 +55,7 @@ const LocalPagination = ({
         return (
           <li key={page.key}>
             <Link
-              href={`?page=${page.number}&limit=${limit}&searchStateBr=${searchStateBr}&search=${search}`}
+              href={`?page=${page.number}&limit=${limit}&searchStateBr=${searchStateBr}&search=${search}&searchSpecialties=${searchSpecialties}&cultivations=${searchCultivations}`}
               className={`${baseStyles} ${
                 currentPage === page.number
                   ? "dark:text-white dark:boder-indigo-500 bg-blue-700 underline"
@@ -75,6 +79,8 @@ export default async function Home({ searchParams }: HomeProps) {
   const limit = Number(searchParams?.limit) || 10;
   const search = searchParams?.search;
   const searchStateBr = searchParams?.searchStateBr;
+  const searchSpecialties = searchParams?.searchSpecialties
+  const searchCultivations = searchParams?.searchCultivations || "TODAS";
 
   const data = await fetchContacts({
     page: Number(searchParams?.page) || 1,
@@ -82,11 +88,11 @@ export default async function Home({ searchParams }: HomeProps) {
     searchStateBr: searchParams?.searchStateBr || "",
     search: searchParams?.search || "",
     sort: searchParams?.sort || "",
-    cultivations: searchParams.cultivations || "TODAS",
-    searchSpecialties: searchParams.searchSpecialties || "",
+    searchCultivations: searchParams?.searchCultivations || "TODAS",
+    searchSpecialties: searchParams?.searchSpecialties || "",
   });
 
-  console.log(data.total);
+  // console.log(data.total);
 
   const totalPages = Number(Math.ceil(data.total / limit));
   const lastPage = totalPages;
@@ -125,6 +131,8 @@ export default async function Home({ searchParams }: HomeProps) {
                 limit={limit}
                 search={search}
                 searchStateBr={searchStateBr}
+                searchSpecialties={searchSpecialties}
+                searchCultivations={searchCultivations}
               />
               <p>{data?.length}</p>
             </div>

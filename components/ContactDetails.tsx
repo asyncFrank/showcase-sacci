@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import { Transition, Dialog } from "@headlessui/react";
 import { FaWhatsapp } from "react-icons/fa";
-import { CiFacebook,CiLinkedin} from "react-icons/ci";
+import { CiFacebook, CiLinkedin } from "react-icons/ci";
 import { FaInstagram } from "react-icons/fa6";
 
 import { Contact } from "@/types";
@@ -67,25 +67,22 @@ const ContactDetail = ({
                   </button>
 
                   <div className="flex flex-1 flex-col gap-3 mb-6 ">
-
                     <div className="relative w-full max-h-28 h-40 bg-pattern bg-cover bg-center rounded-lg p-1">
                       <div className="flex items-center">
-                      <img
-                        src={
-                          contact.image_url === "NA"
-                            ? "/na-contact-img.png"
-                            : contact.image_url
-                        }
-                        alt={contact.name}
-                        width="100px"
-                        className="object-contain rounded-2xl mr-3"
-                      />
-                      <h1 className="text-white font-extrabold sm:text-2xl text-sm">
-                        {contact.name}
-                      </h1>
-
+                        <img
+                          src={
+                            contact.image_url === "NA"
+                              ? "/na-contact-img.png"
+                              : contact.image_url
+                          }
+                          alt={contact.name}
+                          width="100px"
+                          className="object-contain rounded-2xl mr-3"
+                        />
+                        <h1 className="text-white font-extrabold sm:text-2xl text-sm">
+                          {contact.name}
+                        </h1>
                       </div>
-                      
                     </div>
                   </div>
 
@@ -126,7 +123,19 @@ const ContactDetail = ({
                       <div className="flex justify-items-end gap-5 w-full text-right">
                         <h4 className="text-gray capitalize">{"Atividade:"}</h4>
                         <p className="text-black-100 font-semibold text-justify">
-                          {contact.business_segment}
+                          {contact.business_segment === "undefined"
+                            ? "---"
+                            : contact.business_segment}
+                        </p>
+                      </div>
+                      <div className="flex justify-items-end gap-5 w-full text-right">
+                        <h4 className="text-gray capitalize">
+                          {"Especialidades:"}
+                        </h4>
+                        <p className="text-black-100 font-semibold text-justify">
+                          {contact.specialties === "undefined"
+                            ? "---"
+                            : contact.specialties}
                         </p>
                       </div>
                       <div className="flex justify-items-end gap-5 w-full text-right">
@@ -154,18 +163,20 @@ const ContactDetail = ({
                         </p>
                       </div>
                       <div className="flex items-center justify-items-end gap-1 w-full text-right">
-                      <FaWhatsapp/><h4 className="text-gray capitalize ">Whatsapp:</h4>
+                        <FaWhatsapp />
+                        <h4 className="text-gray capitalize ">Whatsapp:</h4>
                         <p className="text-black-100 font-semibold">
                           {contact.whatsapp}
                         </p>
                       </div>
                       <div className="flex items-center justify-items-end gap-1 w-full text-right">
-                      <CiFacebook/><h4 className="text-gray capitalize ">Facebook:</h4>
+                        <CiFacebook />
+                        <h4 className="text-gray capitalize ">Facebook:</h4>
                         <p className="text-black-100 font-semibold">
                           {contact.facebook}
                         </p>
                       </div>
-                     
+
                       {/* ))} */}
                     </div>
                   </div>

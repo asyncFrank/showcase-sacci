@@ -5,12 +5,22 @@ import axios from "axios";
 const urlBase = "https://sacci-agk.onrender.com/api/";
 //Este atualmente
 export const fetchContacts = async (filters: FilterProps) => {
-  const { limit, page, sort, search,searchSpecialties, searchStateBr, cultivations } = filters;
+  const {
+    limit,
+    page,
+    sort,
+    search,
+    searchSpecialties,
+    searchStateBr,
+    searchCultivations,
+  } = filters;
   const response = await axios.get(
     `${urlBase}/contacts?limit=${limit}&page=${page}&sort=${sort}
-    &search=${search}&searchSpecialties=${searchSpecialties}&searchStateBr=${searchStateBr}&cultivations${cultivations}`
+    &search=${search}&searchSpecialties=${searchSpecialties}&searchStateBr=${searchStateBr}&cultivations=${searchCultivations}`
   );
-    
+
+  console.log(`${urlBase}/contacts?limit=${limit}&page=${page}&sort=${sort}
+  &search=${search}&searchSpecialties=${searchSpecialties}&searchStateBr=${searchStateBr}&cultivations=${searchCultivations}`);
   return response.data;
 };
 

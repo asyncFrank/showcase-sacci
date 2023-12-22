@@ -75,92 +75,92 @@ const DashboardCard = async () => {
     {
       title: "ALGODÃO",
       text: `Total até ${formateDate(new Date())}`,
-      urlParam: `/&cultivations=ALGODÃO`,
+      urlParam: `/?&searchCultivations=ALGODÃO`,
       value: 97,
     },
     {
       title: "ARROZ",
       text: `Total até ${formateDate(new Date())}`,
-      urlParam: `/&cultivations=ARROZ`,
+      urlParam: `/?&searchCultivations=ARROZ`,
       value: 135,
     },
     {
       title: "BATATA",
       text: `Total até ${formateDate(new Date())}`,
-      urlParam: `/&cultivations=BATATA`,
+      urlParam: `/?&searchCultivations=BATATA`,
       value: 12,
     },
     {
       title: "CAFÉ",
       text: `Total até ${formateDate(new Date())}`,
-      urlParam: `/&cultivations=CAFÉ`,
+      urlParam: `/?&searchCultivations=CAFÉ`,
       value: 98,
     },
     {
       title: "CANA",
       text: `Total até ${formateDate(new Date())}`,
-      urlParam: `/&cultivations=CANA`,
+      urlParam: `/?&searchCultivations=CANA`,
       value: 92,
     },
     {
       title: "FEIJÃO",
       text: `Total até ${formateDate(new Date())}`,
-      urlParam: `/&cultivations=FEIJÃO`,
+      urlParam: `/?&searchCultivations=FEIJÃO`,
       value: 85,
     },
     {
       title: "FUMO",
       text: `Total até ${formateDate(new Date())}`,
-      urlParam: `/&cultivations=FUMO`,
+      urlParam: `/?&searchCultivations=FUMO`,
       value: 2,
     },
     {
       title: "HORTIFRUTI",
       text: `Total até ${formateDate(new Date())}`,
-      urlParam: `/&cultivations=HORTIFRUTI`,
+      urlParam: `/?&searchCultivations=HORTIFRUTI`,
       value: 175,
     },
     {
       title: "MANDIOCA",
       text: `Total até ${formateDate(new Date())}`,
-      urlParam: `/&cultivations=MANDIOCA`,
+      urlParam: `/?&searchCultivations=MANDIOCA`,
       value: 18,
     },
     {
       title: "MILHO",
       text: `Total até ${formateDate(new Date())}`,
-      urlParam: `/&cultivations=MILHO`,
+      urlParam: `/?&searchCultivations=MILHO`,
       value: 143,
     },
 
     {
       title: "SOJA",
       text: `Total até ${formateDate(new Date())}`,
-      urlParam: `/&cultivations=SOJA`,
+      urlParam: `/?&searchCultivations=SOJA`,
       value: 341,
     },
     {
       title: "TOMATE",
       text: `Total até ${formateDate(new Date())}`,
-      urlParam: `/&cultivations=TOMATE`,
+      urlParam: `/?&searchCultivations=TOMATE`,
       value: 3757,
     },
     {
       title: "TRIGO",
       text: `Total até ${formateDate(new Date())}`,
-      urlParam: `/&cultivations=TRIGO`,
+      urlParam: `/?&cultivations=TRIGO`,
       value: 266,
     },
     {
       title: "OUTROS",
       text: `Total até ${formateDate(new Date())}`,
-      urlParam: `/&cultivations=OUTROS`,
+      urlParam: `/?&searchCultivations=OUTROS`,
       value: 2,
     },
     {
       title: "NI",
       text: `Total até ${formateDate(new Date())}`,
-      urlParam: `/&cultivations=NI`,
+      urlParam: `/?&searchCultivations=NI`,
       value: 4295,
     },
   ]);
@@ -176,7 +176,7 @@ const DashboardCard = async () => {
            border-solid border-transparent hover:border-blue-700 cursor-pointer w-full p-4"
             key={i}
           >
-            <h3 className="font-bold mb-4">{card.title}</h3>
+            <h3 className="font-bold mb-4" key={i}>{card.title}</h3>
             <p>{card.text}</p>
             <p>{card.value}</p>
             <CustomButton
@@ -198,6 +198,15 @@ const DashboardCard = async () => {
             <h6 className="mx-auto pl-4 pt-4 text-xs" key={cultura.title}>
               {cultura.title} <br/> {cultura.value}
             </h6>
+            <CustomButton
+              title="Acessar"
+              containerStyles="w-full h-6 py-[12px] rounded-full bg-white-blue"
+              textStyles="text-white text-[10px] leading-[10px] font-bold"
+              rightIcon="/right-arrow.svg"
+              handleClick={() => {
+                router.push(`${cultura.urlParam}`);
+              }}
+            />
           </div>
         ))}
       </div>
