@@ -17,7 +17,7 @@ export interface Contact {
   email: string;
   phone: string;
   planting_culture: string;
-  cultivations: string;
+  cultivations: string[];
   business_segment: string;
 }
 
