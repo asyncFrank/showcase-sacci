@@ -1,8 +1,8 @@
 import { FilterProps } from "@types";
 import axios from "axios";
 
-// const urlBase = "http://localhost:9002/api";
-const urlBase = "https://sacci-agk.onrender.com/api/";
+const urlBase = "http://localhost:9002/api";
+// const urlBase = "https://sacci-agk.onrender.com/api/";
 //Este atualmente
 export const fetchContacts = async (filters: FilterProps) => {
   const {
@@ -12,15 +12,15 @@ export const fetchContacts = async (filters: FilterProps) => {
     search,
     searchSpecialties,
     searchStateBr,
-    searchCultivations,
+    cultivations,
   } = filters;
   const response = await axios.get(
     `${urlBase}/contacts?limit=${limit}&page=${page}&sort=${sort}
-    &search=${search}&searchSpecialties=${searchSpecialties}&searchStateBr=${searchStateBr}&cultivations=${searchCultivations}`
+    &search=${search}&searchSpecialties=${searchSpecialties}&searchStateBr=${searchStateBr}&cultivations=${cultivations}`
   );
 
   console.log(`${urlBase}/contacts?limit=${limit}&page=${page}&sort=${sort}
-  &search=${search}&searchSpecialties=${searchSpecialties}&searchStateBr=${searchStateBr}&cultivations=${searchCultivations}`);
+  &search=${search}&searchSpecialties=${searchSpecialties}&searchStateBr=${searchStateBr}&cultivations=${cultivations}`);
   return response.data;
 };
 

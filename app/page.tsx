@@ -38,7 +38,7 @@ const LocalPagination = ({
   searchStateBr = "",
   search = "",
   searchSpecialties = "",
-  searchCultivations = "TODAS",
+  searchCultivations = "",
 }: {
   currentPage: number;
   lastPage: number;
@@ -79,8 +79,8 @@ export default async function Home({ searchParams }: HomeProps) {
   const limit = Number(searchParams?.limit) || 10;
   const search = searchParams?.search;
   const searchStateBr = searchParams?.searchStateBr;
-  const searchSpecialties = searchParams?.searchSpecialties
-  const searchCultivations = searchParams?.searchCultivations || "TODAS";
+  const searchSpecialties = searchParams?.searchSpecialties;
+  const cultivations = searchParams?.cultivations;
 
   const data = await fetchContacts({
     page: Number(searchParams?.page) || 1,
@@ -88,7 +88,7 @@ export default async function Home({ searchParams }: HomeProps) {
     searchStateBr: searchParams?.searchStateBr || "",
     search: searchParams?.search || "",
     sort: searchParams?.sort || "",
-    searchCultivations: searchParams?.searchCultivations || "TODAS",
+    cultivations: searchParams?.cultivations || "",
     searchSpecialties: searchParams?.searchSpecialties || "",
   });
 
@@ -132,7 +132,7 @@ export default async function Home({ searchParams }: HomeProps) {
                 search={search}
                 searchStateBr={searchStateBr}
                 searchSpecialties={searchSpecialties}
-                searchCultivations={searchCultivations}
+                searchCultivations={cultivations}
               />
               <p>{data?.length}</p>
             </div>

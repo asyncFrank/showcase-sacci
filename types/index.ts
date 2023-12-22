@@ -17,7 +17,7 @@ export interface Contact {
   email: string;
   phone: string;
   planting_culture: string;
-  cultivations: string[];
+  cultivations: string;
   business_segment: string;
 }
 
@@ -38,7 +38,7 @@ export interface FilterProps {
   page?: number;
   sort: string;
   searchSpecialties?:string;
-  searchCultivations?: string;
+  cultivations?: string;
 }
 
 export interface HomeProps {
